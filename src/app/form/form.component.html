@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="bg-dark" style="height: 5em;">
+        <img src="../../assets/Amazon Logo.png" alt="AmaZon" height="65px" width="65px" style="margin-top: 7px;margin-left: 15px;position: absolute;">
+        <p style="font-weight: bold;font-size: xx-large;color:whitesmoke;margin-left: 38%;padding-top: 15px;"> Amazon Info Form</p>
+    </div>
+    <div class="row">
+        <div class="col-5 py-3 px-5 " style="background-color: rgb(248, 216, 71);margin-top: 7%;">
+        <form [formGroup]="form" class="{{formError ? 'error-form':''}}" (ngSubmit)="submitForm()">
+        <div class="form" >
+            <div class="mb-3">
+                <label for="firstname" class="form-label">First Name:</label>
+                <input type="text" class="form-control" name="YourFirstname" formControlName="YourFirstname" placeholder="Enter your Firstname" style="width:60%;margin-left:10%" >
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" name="YourLastname" formControlName="YourLastname" placeholder="Enter  your Lastname" style="width:60%;margin-left:10%" >
+            </div>
+            <div class="mb-3">
+                <label for="emailid" class="form-label">Email id:</label>
+                <input type="text" class="form-control" name="YourEmailid" formControlName="YourEmailid" placeholder="Enter  your Email" style="width:60%;margin-left:10%" >
+            </div>
+            <div class="mb-3">
+                <label for="contactno" class="form-label">Contact Number:</label>
+                <input type="text" class="form-control" name="YourContactno" formControlName="YourContactno" placeholder="Enter  your contactno" style="width:60%;margin-left:10%" >
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    </div>
+        <div class="col-2"></div>
+        <div class="col-5 py-3 px-5 " style="background-color: rgb(248, 216, 71);height:25em;margin-top: 7%;">
+            <div class="mb-5" style="margin-left: 100px;font-family:roboto"><h3>DISPLAY INFORMATION</h3></div>
+            
+            <div *ngFor="let formarray of newarrayvalue">
+                <label for="fname" class="form-label"><p style="font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;">{{formarray.key}}:&nbsp;&nbsp;{{formarray.value}}</p><br></label>
+            </div>
+            <!-- <label for="firstname" class="form-label mb-3">First Name:</label><br>
+            <label for="lastname" class="form-label mb-3">Last Name:</label><br>
+            <label for="firstname" class="form-label mb-3">Email id:</label><br>
+            <label for="firstname" class="form-label mb-5">Address:</label><br>
+            <label for="firstname" class="form-label mb-3">Pincode:</label><br>
+            <label for="firstname" class="form-label mb-3">Contact Number:</label><br -->
+        </div>
+    </div>
+  </div>
+  
